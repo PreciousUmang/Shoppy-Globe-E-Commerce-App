@@ -1,14 +1,13 @@
-import { createReducer } from "@reduxjs/toolkit";
-import reducer from "./cartSlice";
+import { createSlice } from "@reduxjs/toolkit";
 
-const productSlice = createReducer({
+const productSlice = createSlice({
     name: 'products',
     initialState: {
         list:[],
         productDetail: null,
         error: null
     },
-    reducer:{
+    reducers:{
         setProducts: (state, action) =>{
             state.list = action.payload;
         },

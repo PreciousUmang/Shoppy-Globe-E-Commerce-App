@@ -1,6 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { UNSAFE_ErrorResponseImpl } from "react-router";
-
 
 const cartSlice = createSlice({
     name : 'cart',
@@ -12,7 +10,7 @@ const cartSlice = createSlice({
             state.items.push(action.payload)
         },
         removeItem:(state, action) => {
-            state.items.filter(item => item.id !== action.payload);
+          state.items=  state.items.filter(item => item.id !== action.payload);
         }
     }
     }

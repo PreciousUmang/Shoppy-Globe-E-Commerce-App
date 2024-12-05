@@ -1,6 +1,6 @@
-import { createActionCreatorInvariantMiddleware, createReducer } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 
-const searchSlice = createReducer({
+const searchSlice = createSlice({
     name: 'search', 
     initialState: {
      query: ''
