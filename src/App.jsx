@@ -1,13 +1,14 @@
-import { Outlet } from 'react-router'
 import './App.css'
-import TestRedux from './components/TestRedux'
+import Header from './components/Header.jsx'
+import ProductList from './components/ProductList.jsx'
 
 function App() {
 
 
   return (
     <>
-      <TestRedux />
+      <Header />
+      <ProductList />
     </>
   )
 }

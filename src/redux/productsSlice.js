@@ -5,7 +5,8 @@ const productSlice = createSlice({
     initialState: {
         list:[],
         productDetail: null,
-        error: null
+        error: null,
+        thumbnail: null
     },
     reducers:{
         setProducts: (state, action) =>{

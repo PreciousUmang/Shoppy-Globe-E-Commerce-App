@@ -1,0 +1,21 @@
+.product-holder{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-holder card{
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+    border : 1px solid purple;
+    padding-bottom: 1rem;
+    box-shadow: 1px 1px 20px 1px peachpuff
+}
+
+.cart-button{
+    z-index: 10;
+}
