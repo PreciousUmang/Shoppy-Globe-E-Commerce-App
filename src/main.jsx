@@ -8,16 +8,16 @@ import App from './App.jsx';
 import NotFound from './components/NotFound.jsx';
 import { lazy, Suspense } from 'react';
 
-// Lazy load components
 const ProductList = lazy(() => import('./components/ProductList.jsx'));
 const ProductDetail = lazy(() => import('./components/ProductDetail.jsx'));
 const Cart = lazy(() => import('./components/Cart.jsx'));
+const Checkout = lazy(() => import('./components/Checkout.jsx'))
 
 const appRouter = createBrowserRouter([
   {
     path: '/',
-    element: <App />, // Wrap the App component which includes the Header
-    errorElement: <NotFound />, // Error page without the Header
+    element: <App />, 
+    errorElement: <NotFound />,
     children: [
       {
         path: '/',
@@ -36,16 +36,23 @@ const appRouter = createBrowserRouter([
         ),
       },
       {
-        path: '/cart',
+        path: 'cart',
         element: (
           <Suspense fallback={<div>Loading Cart...</div>}>
             <Cart />
           </Suspense>
         ),
       },
+      {
+        path: '/checkout',
+        element: (
+          <Suspense fallback={<div>Initiating Payment...</div>}>
+            <Checkout/>
+          </Suspense>
+        )
+      }
     ],
   },
-  // The NotFound route is outside of the App layout, so no Header will be shown
   {
     path: '*',
     element: <NotFound />,
