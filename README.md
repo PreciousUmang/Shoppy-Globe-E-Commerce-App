@@ -40,13 +40,11 @@ cd Shoppy Globe E Commerce App
 
 2. Install dependencies:
 ```bash
-Copy code
 npm install
 ```
 
 3. Run the development server:
 ```bash
-Copy code
 npm run dev
 ```
 
