@@ -1,5 +1,4 @@
-import mongoose from "mongoose";
-import { mergeConfig } from "vite";
+import mongoose, { mongo } from "mongoose";
 
 const userSchema = new mongoose.Schema({
     userId : {
@@ -12,3 +11,6 @@ const userSchema = new mongoose.Schema({
         required: true
     }
 })
+
+const User = mongoose.model('user', userSchema);
+export default User;
