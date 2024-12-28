@@ -1,9 +1,12 @@
 import express from "express"
 import Cart from "../Model/cart.model.js";
 import Product from "../Model/product.model.js";
+import authMiddleware from "../Middleware/auth.js"
 
 const router = express.Router()
 
+
+router.use(authMiddleware)
 //  Add an item to the cart
 router.post('/', async (req, res) =>{
 

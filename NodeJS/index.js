@@ -20,7 +20,7 @@ app.use('/products', productRoutes)
 app.use("/cart", cartRoutes)
 
 // User Route
-app.use ("/user", )
+app.use ("/user", userRoutes)
 
 app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
