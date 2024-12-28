@@ -2,6 +2,7 @@ import express from "express"
 import connectDB from "./Config/db.mjs";
 import productRoutes from "./Routes/product.routes.js"
 import cartRoutes from "./Routes/cart.routes.js"
+import userRoutes from "./Routes/user.routes.js"
 
 const app = express();
 const PORT = 3000;
@@ -17,6 +18,9 @@ app.use('/products', productRoutes)
 
 // Cart Route
 app.use("/cart", cartRoutes)
+
+// User Route
+app.use ("/user", )
 
 app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
