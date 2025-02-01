@@ -1,6 +1,6 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import { RouterProvider, createHashRouter, HashRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { myStore } from './redux/myStore.js';
 import './index.css';
@@ -13,10 +13,11 @@ const ProductDetail = lazy(() => import('./components/ProductDetail.jsx'));
 const Cart = lazy(() => import('./components/Cart.jsx'));
 const Checkout = lazy(() => import('./components/Checkout.jsx'))
 
-const appRouter = createBrowserRouter([
+const appRouter = createHashRouter([
   {
+
     path: '/',
-    element: <App />, 
+    element: <App />,
     errorElement: <NotFound />,
     children: [
       {
@@ -47,7 +48,7 @@ const appRouter = createBrowserRouter([
         path: '/checkout',
         element: (
           <Suspense fallback={<div>Initiating Payment...</div>}>
-            <Checkout/>
+            <Checkout />
           </Suspense>
         )
       }
@@ -57,12 +58,15 @@ const appRouter = createBrowserRouter([
     path: '*',
     element: <NotFound />,
   },
-]);
+],
+  { basename: '/Shoppy-Globe-E-Commerce-App' });
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <Provider store={myStore}>
-      <RouterProvider router={appRouter} />
+      <HashRouter>
+        <RouterProvider router={appRouter} /> 
+        </HashRouter>
     </Provider>
   </StrictMode>
 );

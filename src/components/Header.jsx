@@ -1,5 +1,5 @@
 import { Link } from 'react-router';
-import brandLogo from '/src/assets/logo 2.jpg'
+import brandLogo from '/public/assets/logo 2.jpg'
 
 function Header() {
 
